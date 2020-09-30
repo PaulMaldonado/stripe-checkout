@@ -1,0 +1,38 @@
+<%- include("./pages/main.ejs") %>
+<%- include("./pages/navbar.ejs") %>
+
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-md-4 col-sm-12 col-lg-4 col-xl-4 mx-auto">
+            <div class="card">
+                <div class="card-header">Pc Imac</div>
+                <img src="/img/macbook-payment.jpg" alt="macbook payment" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, eligendi.</h5>
+                    <p class="card-text"><strong>Precio $40 USD</strong></p>
+                </div>
+                <div class="card-footer">
+                    <form action="/createCustomer" method="POST">
+                        <script
+                          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                          data-key="pk_test_51HWpgHDOMQbBff8NvqJrFk6VrmJBIVI1aJOOu334VCX71l2yZZ7cSg2bB9BQWEHJ08u7BXIbOI9dp5dZOH61ekyC00uXkrDTew"
+                          data-amount="4000"
+                          data-name="Laptop Imac"
+                          data-description="Tienda de Laptops"
+                          data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                          data-locale="auto"
+                          data-currency="usd">
+                        </script>
+                        <script>
+                            document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
+                        </script>
+
+                        <button type="submit" class="btn btn-primary btn-block">Pagar</button>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include("./pages/footer.ejs") %> 
